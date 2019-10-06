@@ -1,0 +1,289 @@
+<html>
+
+<head>
+<title> Task </title>
+
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+  
+  .notification {
+  background-color: ;
+  color: white;
+  text-decoration: none;
+  padding: 1px 2px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: ;
+}
+
+.notification .badge {
+  position: absolute;
+  top:-1px;
+  right: -5px;
+  padding: 2px 3px;
+  border-radius: 50%;
+  background-color:red ;
+  color: white;
+}
+.button {
+  background-color: #03fc2c; /* Green */
+  border: none;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius:50%;
+}
+      .container
+      { 
+          width:1100px;
+        margin: 2px auto 0;
+        display:table;
+        box-sizing: border-box;
+        /*  background: 	#F9F9F9; */
+          
+      }
+      .row
+      {
+          margin: 30px 0;
+          
+          
+      }
+      
+      .p1_css
+      {
+                
+       
+          margin-left: 20px;
+          text-align: right; 
+          
+      }
+      .column
+      {
+          background: #ccc;
+          display: table-cell;
+          
+          padding: 30px;
+          
+           text-align: left; 
+          vertical-align: middle; */
+          border-left: 15px solid #fff;
+          border-right: 15px solid #fff;
+      }
+      
+      
+      
+      
+      
+    .span_css1
+      {
+          padding-right:3px;
+          padding-top: 3px;
+         
+          margin-left: 100px;
+          vertical-align: middle;
+          margin-left: 20px;
+          font-weight: bold;
+          font-size: 16px;
+          
+      }
+      .img_css
+      {
+          vertical-align: middle;
+          
+      }
+      .p_css
+      {
+          margin-top: 40px:
+                
+        font-size: 28px;
+          
+          
+      }
+      
+      
+
+.butt{
+  background-color: white; 
+  color:  #008CBA; 
+    font-size: 18px;
+  border: 2px solid #008CBA;
+    width:80px;
+    margin-top: 20px;
+    
+}
+
+
+
+
+  </style>
+  
+  <script type="text/javascript">
+  
+
+		
+$(function (){
+     
+    
+    });
+		
+$(function (){
+	  
+    
+	
+			var colors = new Array("fff","fff","fff","ff00ff","geeeef");
+				var n = 4;
+    
+        var task = new Array("Blog/Articles","Newsletter/E-mailer","Whitepaper","e-book","Report/Guide","Product Description","Website Content","Video Script","Company Profile/Brochure","Press Release");
+   
+      var counter=0;
+    
+    
+    for(var i=0;i<n;i++)
+         {
+						     var row1 = document.createElement('div');
+                              document.getElementById('con').appendChild(row1);
+                                row1.setAttribute("id","row"+i);
+                                row1.setAttribute("class","row");
+                         for(var j=0;j<3;j++)
+				     {
+                         if(i==3 && j==1)
+                             {
+                                 break;
+                             }
+                         else{
+                             
+                         
+    
+                         var items = [];
+                         items.push(['row'+i,'cols'+j]);
+                         
+                        
+                      
+                            var cols1 = document.createElement('div');
+                            //div.className = "inlineDiv";
+
+                            cols1.style.backgroundColor = "#" + colors[j];
+                        //	div.style.flex= "1" ;
+                        	cols1.style.width = ($('.row').width() / 3) + "px";
+                         //   div.style.width = "33%";
+                        	cols1.style.height = "300px";
+                         
+                         
+                          document.getElementById('row'+i).appendChild(cols1);
+                         
+                        
+                         
+                         
+                           
+                                   cols1.setAttribute("id","cols"+counter);
+                                   cols1.setAttribute("class","column");
+                         
+                          
+                         
+                          //img tag 
+                         
+                                    var elem = document.createElement("img");
+                                    elem.setAttribute("src", "logo.png");
+                         document.getElementById('cols'+counter).appendChild(elem);
+                         elem.setAttribute("class","img_css");
+                                    
+                                    elem.setAttribute("alt", "white_panda_logo");
+                         //span tag
+                                         var span1 = document.createElement("SPAN");
+                                         span1.innerHTML=task[counter];
+                                        span1.setAttribute("class","span_css1");
+                         
+                                         var p1 = document.createElement("p");
+                                             //elem.appendChild(span2);
+                                        p1.innerHTML="From ₹500";
+                                     p1.setAttribute("class","p_css1");
+                                             
+
+                         document.getElementById('cols'+counter).appendChild(span1);
+                         document.getElementById('cols'+counter).appendChild(p1);
+                
+                         //pre tag
+                                                  
+                        var p = document.createElement("P");
+                         p.innerHTML = "\n\
+    Typically 450-400 words,an ebook  is\r\n\
+    perfect for your target audience ranging\n\
+    from propective customers to  users.\n\
+    ";
+
+                         document.getElementById('cols'+counter).appendChild(p);
+                         p.setAttribute("class","p_css");
+                         
+            //button creation
+                         
+                         var button = document.createElement("button");
+                                          
+                                        button.setAttribute("class","butt");
+                                        button.setAttribute =("value","Order");
+                         button.innerHTML = "Order";
+                         document.getElementById('cols'+counter).appendChild(button);
+                         
+                                   
+                             counter+=1;
+                         console.log(counter);
+                             
+                         }
+                        
+				       }
+             
+             
+         }
+       console.log(con);
+    
+    
+    
+    
+   
+	 
+  });
+  		
+   </script>
+  
+</head>
+
+<body>
+
+   
+  <div > <img src="logo_comp1.png" height="25" width="100" style="margin-left:120px;"></img>
+		<a href="#" class="notification" style="margin-top:20px;margin-left:700px">
+		  <i class="fa fa-bell-o n1" style="font-size:30px;color:black"></i>
+		  <span class="badge" style="font-size:12px;">399</span>
+	  </a>
+	  <button class="button"style="margin-left:30px;" >AB</button>
+ </div>
+  <hr></hr>
+  
+  
+  
+  <div class="container" id="con">
+        
+</div>
+   
+  
+        
+
+
+		
+</body>
+
+</html>
