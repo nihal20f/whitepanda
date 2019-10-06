@@ -55,6 +55,7 @@
         display:table;
         box-sizing: border-box;
           background: 	#F9F9F9; 
+          margin-bottom: 20px;
           
       }
       .row
@@ -89,6 +90,7 @@
           border-spacing: 10px 20px;
       }
       
+     
       
       
       
@@ -123,11 +125,16 @@
 
 .butt{
   background-color: white; 
-  color:  #008CBA; 
+  color: #34ebc0; 
     font-size: 18px;
-  border: 2px solid #008CBA;
-    width:80px;
+  border: 2px solid #34ebc0;
+    
     margin-top: 20px;
+    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+    cursor: pointer;
+    padding: 3px 20px;
     
 }
 
@@ -150,7 +157,36 @@
     transform: scale(1.1);
 }
       
+       @media only screen and  (max-width: 900px)
+      {
+          .container
+          {
+              margin: 0;
+              padding: 10px;
+              
+             
+          }
+          .column
+          {
+              width: 100%;
+              display: block;
+              margin: 10px;
+              box-sizing: border-box;
+              
+          }
+          .row
+          {
+             margin: 0px;
+          }
+      }
       
+      .content
+      {
+           box-sizing: border-box;
+          background: #ccc;
+          margin-top: 30px;
+          margin-bottom: 10px;
+      }
 
   </style>
   
@@ -158,10 +194,7 @@
   
 
 		
-$(function (){
-     
-    
-    });
+
 		
 $(function (){
 	  
@@ -175,7 +208,7 @@ $(function (){
     var rate = new Array(500,1000,2000,1000,1000,500,1000,1000,2000,2000);
    
       var counter=0;
-    
+      var count=0;
     
     for(var i=0;i<n;i++)
          {
@@ -191,7 +224,7 @@ $(function (){
                              }
                          else{
                              
-                         
+                      
     
                          var items = [];
                          items.push(['row'+i,'cols'+j]);
@@ -261,12 +294,22 @@ $(function (){
                                           
                                         button.setAttribute("class","butt");
                                         button.setAttribute =("value","Order");
+                                      button.setAttribute =("id","order"+counter);
+                             var can=task[counter];
+                             var can1=rate[counter];
+                             
+                                     button.onclick = function()
+                                        {
+                                            alert('sucessfully Ordered of!!!');return false;
+                                          };
+                            //  button.setAttribute =("onclick","order_function()");
                          button.innerHTML = "Order";
                          document.getElementById('cols'+counter).appendChild(button);
                          
                                    
                              counter+=1;
-                         console.log(counter);
+                             count+=1;
+                         console.log(count);
                              
                          }
                         
@@ -288,7 +331,7 @@ $(function (){
 </head>
 
 <body>
-
+  
    
   <div > <img src="logo_comp1.png" height="25" width="100" style="margin-left:120px;"></img>
 		<a href="#" class="notification" style="margin-top:20px;margin-left:700px">
@@ -298,8 +341,19 @@ $(function (){
 	  <button class="button"style="margin-left:30px;" >AB</button>
  </div>
   <hr></hr>
+
+<h1 style="font-family: calibri;margin-left: 100px" class=""><b> Content Store </b></h1>
   
   
+<div class="container">
+    <h4 style="color:#34ebc0">Got bulk order or almost similar orders ? Fill the order brief in an excel sheet</h4>
+    <p>if you're wondering about an easy way to place in large numbers, we provide a way cutomized just for that.
+        Download our excel sheet and fill the order in the prescribed format and submit.in case any help,we
+        are just a click away to assist you in placing your orders.
+    </p>
+    <button type="button" class="butt">Order via Excel Sheet</button>
+</div>
+
   
   <div class="container" id="con">
         
