@@ -54,12 +54,13 @@
         margin: 2px auto 0;
         display:table;
         box-sizing: border-box;
-        /*  background: 	#F9F9F9; */
+          background: 	#F9F9F9; 
           
       }
       .row
       {
           margin: 30px 0;
+         
           
           
       }
@@ -72,17 +73,20 @@
           text-align: right; 
           
       }
+      
       .column
       {
           background: #ccc;
           display: table-cell;
+          padding: 10px;
           
           padding: 30px;
           
            text-align: left; 
-          vertical-align: middle; */
-          border-left: 15px solid #fff;
-          border-right: 15px solid #fff;
+          vertical-align: middle; 
+          border-left: 15px #ccc;
+          border-right: 15px #ccc;
+          border-spacing: 10px 20px;
       }
       
       
@@ -128,7 +132,25 @@
 }
 
 
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
 
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
+      
+      
 
   </style>
   
@@ -149,6 +171,8 @@ $(function (){
 				var n = 4;
     
         var task = new Array("Blog/Articles","Newsletter/E-mailer","Whitepaper","e-book","Report/Guide","Product Description","Website Content","Video Script","Company Profile/Brochure","Press Release");
+    
+    var rate = new Array(500,1000,2000,1000,1000,500,1000,1000,2000,2000);
    
       var counter=0;
     
@@ -192,6 +216,8 @@ $(function (){
                            
                                    cols1.setAttribute("id","cols"+counter);
                                    cols1.setAttribute("class","column");
+                                    cols1.setAttribute("class","hvr-grow column");
+                                  
                          
                           
                          
@@ -210,7 +236,7 @@ $(function (){
                          
                                          var p1 = document.createElement("p");
                                              //elem.appendChild(span2);
-                                        p1.innerHTML="From ₹500";
+                                        p1.innerHTML="From ₹"+rate[counter];
                                      p1.setAttribute("class","p_css1");
                                              
 
